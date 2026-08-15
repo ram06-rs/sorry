@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>I'm Sorry ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9ecb, #ffd6e8, #ffafd4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #75153f;
+}
+
+/* START SCREEN */
+
+#startScreen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9ecb, #ffd6e8, #ffafd4);
+    z-index: 100;
+}
+
+.startBox {
+    width: 88%;
+    max-width: 420px;
+    padding: 40px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(12px);
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(120,20,70,0.2);
+}
+
+.startHeart {
+    font-size: 75px;
+    animation: heartbeat 1.2s infinite;
+}
+
+.startBox h2 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.startBox p {
+    font-size: 18px;
+}
+
+/* MAIN CARD */
+
+.card {
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(12px);
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(120,20,70,0.2);
+    z-index: 2;
+}
+
+.emoji {
+    font-size: 70px;
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+h1 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.message {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+/* PERSONAL MESSAGE */
+
+.personal {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.personalTitle {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* BUTTONS */
+
+button {
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.openButton,
+.yesButton {
+    background: #ff4f9a;
+    color: white;
+}
+
+.noButton {
+    background: white;
+    color: #e33b83;
+}
+
+/* YES / NO AREA */
+
+#question {
+    margin-top: 25px;
+}
+
+#locationBox {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 20px;
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 25px;
+    animation: float 7s linear infinite;
+    opacity: 0.7;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- START SCREEN -->
+
+<div id="startScreen">
+
+    <div class="startBox">
+
+        <div class="startHeart">💗</div>
+
+        <h2>A Little Message For You</h2>
+
+        <p>
+            I made something special for you 🥺❤️
+        </p>
+
+        <button class="openButton" onclick="startWebsite()">
+            Tap To Open 💕
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- MAIN PAGE -->
+
+<div class="card">
+
+    <div class="emoji">
+        🥺❤️
+    </div>
+
+    <h1>
+        I'm Really Sorry
+    </h1>
+
+    <div class="message">
+
+        I know I made a mistake,
+        and I genuinely feel sorry for it. 🥺
+
+        <br><br>
+
+        I never wanted to hurt you.
+
+        <br>
+
+        I just want to see you happy. 🩷
+
+    </div>
+
+
+    <!-- PERSONAL MESSAGES -->
+
+    <div class="personal">
+
+        <div class="personalTitle">
+            My Message For You 💌
+        </div>
+
+        I am really sorry for yesterday
+        meri jaan ❤️ plzzz maaf krde 🥺
+
+        <br><br>
+
+        yrrr I really loves u so much
+        🥺🥺🥺🩷
+
+    </div>
+
+
+    <!-- YES / NO -->
+
+    <div id="question">
+
+        <h2>
+            Will you forgive me? 🥺❤️
+        </h2>
+
+        <button class="yesButton" onclick="sayYes()">
+            YES ❤️
+        </button>
+
+        <button class="noButton" onclick="sayNo()">
+            NO 😭
+        </button>
+
+    </div>
+
+
+    <!-- LOCATION -->
+
+    <div id="locationBox">
+
+        <h3>📍 Your Location</h3>
+
+        <p id="locationText">
+            Requesting location permission...
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* OPEN WEBSITE + START MUSIC */
+
+function startWebsite() {
+
+    /* Open the website immediately */
+    document.getElementById("startScreen").style.display = "none";
+
+    /* Try to play music */
+    const music = document.getElementById("music");
+
+    music.play().catch(function(error) {
+        console.log("Music could not start:", error);
+    });
+}
+
+
+/* YES BUTTON */
+
+function sayYes() {
+
+    window.location.href = "yes.html";
+
+}
+
+
+/* NO BUTTON + LOCATION */
+
+function sayNo() {
+
+    const locationBox =
+        document.getElementById("locationBox");
+
+    const locationText =
+        document.getElementById("locationText");
+
+    locationBox.style.display = "block";
+
+    locationText.innerText =
+        "Please allow location permission... 📍";
+
+    if (!navigator.geolocation) {
+
+        locationText.innerText =
+            "Your browser does not support location.";
+
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const latitude =
+                position.coords.latitude;
+
+            const longitude =
+                position.coords.longitude;
+
+            locationText.innerHTML =
+                "Latitude: " + latitude +
+                "<br>" +
+                "Longitude: " + longitude +
+                "<br><br>" +
+                "📍 Location permission granted.";
+
+        },
+
+        function() {
+
+            locationText.innerText =
+                "Location permission was not granted. ❤️";
+
+        }
+
+    );
+
+}
+
+
+/* FLOATING HEARTS */
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘"
+    ];
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (Math.random() * 4 + 5) + "s";
+
+    heart.style.fontSize =
+        (Math.random() * 20 + 15) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 9000);
+}
+
+setInterval(createHeart, 500);
+
+</script>
+
+</body>
+</html>
