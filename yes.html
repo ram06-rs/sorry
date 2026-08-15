@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thank You ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ff9ecb,
+        #ffd6e8,
+        #ffafd4
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    overflow: hidden;
+
+    color: #75153f;
+}
+
+.card {
+    width: 90%;
+    max-width: 500px;
+
+    padding: 40px 25px;
+
+    background: rgba(255,255,255,0.45);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 10px 40px rgba(120,20,70,0.2);
+}
+
+.heart {
+    font-size: 80px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+h1 {
+    font-size: 36px;
+}
+
+p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.floating {
+    position: fixed;
+    bottom: -40px;
+    animation: float 7s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="heart">❤️</div>
+
+    <h1>Thank You 🥺❤️</h1>
+
+    <p>
+        You said YES! 🥹🩷
+    </p>
+
+    <p>
+        I really hope you can forgive me.
+        You mean a lot to me. 💕
+    </p>
+
+    <p>
+        I'm really sorry for yesterday
+        meri jaan. 🥺❤️
+    </p>
+
+    <div style="font-size:35px;">
+        💕 🌸 💗 🌹 💖
+    </div>
+
+</div>
+
+<script>
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating";
+
+    heart.innerHTML =
+        ["❤️","💕","💗","💖","🌸"]
+        [Math.floor(Math.random() * 5)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (Math.random() * 20 + 15) + "px";
+
+    heart.style.animationDuration =
+        (Math.random() * 4 + 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 9000);
+}
+
+setInterval(createHeart, 500);
+
+</script>
+
+</body>
+</html>
